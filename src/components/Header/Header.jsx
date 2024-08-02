@@ -67,9 +67,9 @@ export default function Header() {
                             <button onClick={() => showMenu()}  className="header__burger mr-6">
                                 <img className="bg-white rounded-lg" src={menu} width={35} height={35} alt="" />
                             </button>
-                            <button >
+                            {/* <button >
                                 <img className="mr-4" src={darkmode} width={35} height={35}  alt="darkmode" />
-                            </button>
+                            </button> */}
                             <select defaultValue={i18n.language} onChange={(evt) => changeLang(evt.target.value)} className="header__select border-solid border-2 border-white-600 mr-8 rounded-lg bg-transparent font-bold text-white p-2 cursor-pointer">
                                 <option className="text-black" value="uz">uz</option>
                                 <option className="text-black" value="ru">ru</option>
