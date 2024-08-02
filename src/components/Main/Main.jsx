@@ -5,14 +5,14 @@ import ConstructionProducts from "../../database/data";
 export default function Main() {
     return(
         <div className="container">
-            <main className="main ">
+            <main className="main">
             <div className="">
                 <h1 className="font-bold text-[35px] text-center">Qurilish maxsulotlari</h1>
-                <ul className="flex justify-between flex-wrap mb-10">
+                <ul className="main__list flex justify-between flex-wrap mb-10">
                  {
                     ConstructionProducts?.map(item => {
                         return(
-                            <li id="cars" key={item.id} className="p-5 border-solid border-2 rounded mt-5 hover:shadow-lg ">
+                            <li id="cars" key={item.id} className="main__item p-5 border-solid border-2 rounded mt-5 hover:shadow-lg ">
                                 <img className="mb-4" src={item.image} width={250} height={250} alt=""/>
                                 <h2 className="mb-2 font-bold">{item.name}</h2>
                                 <div className="mb-2">{item.massa}</div>

@@ -25,7 +25,7 @@ export default function Header() {
 
     const menuRef = useRef();
 
-    const [modal, setModal] = useState(false)
+    // const [modal, setModal] = useState(false)
     const [modalIsOpen, setIsOpen] = useState(false);
 
     // menu

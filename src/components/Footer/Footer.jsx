@@ -17,7 +17,7 @@ export default function Footer() {
 
     return(
         <>
-            <footer className="footer bg-slate-500">
+            <footer className="footer bg-slate-500 p-10">
                 <div className="container">
                     <div className="footer__wrapper">
                         <h1 className="font-bold text-[30px] text-white text-center tracking-[5px]">{t("footerTitle1")}</h1>
