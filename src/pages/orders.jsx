@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Modal from 'react-modal';
 
@@ -15,8 +15,10 @@ export default function Orders() {
     const { id } = useParams()
 
 
-    // modal
+    // hook
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [count , setCount ] = useState(0)
+
 
     // modal
     const openModal = () => {
@@ -31,18 +33,33 @@ export default function Orders() {
         <>
         <Header/>
         <div className="container">
-            <ul className=" mb-10">
+            <ul className="mt-24 mb-10">
                 {
                     (ConstructionProducts ? ConstructionProducts.filter(i => i.id === Number(id)): ConstructionProducts).map(item => {
                         return(
-                            <li id="cars" key={item.id} className="item flex p-2 border-solid border-2 rounded mt-5 hover:shadow-lg w-[550px] h-[300px]">
-                                <img className="mb-4" src={item.image} width={350} height={350} alt=""/>
-                                <div className="">
+                            <li id="cars" key={item.id} className="item flex p-2 border-solid border-2 rounded mt-5 hover:shadow-lg w-[800px] h-[400px]">
+                                <img className="mb-4 rounded-lg" src={item.image} width={350} height={300} alt="image"/>
+                                <div className="ml-5">
                                     <h2 className="mb-2 font-bold text-[30px]">{item.name}</h2>
-                                    <div className="mb-2 font-bold">{item.massa}</div>
-                                    <span className="text-blue-600 text-[20px] block mb-1 line-through">{item.price}</span>
-                                    <span className="text-blue-600  text-[20px]">{item.discount}</span>
-                                    <button onClick={openModal} className="w-40 p-2 rounded-lg block mt-14 bg-cyan-700 text-white font-bold">Sotib olish</button>                           
+                                    <p className="w-72">{item.description}</p>
+                                    <div className="my-2"><b>{item.massa} </b> (qoldiq: {item.balance}) </div>
+                                   <div className="flex">
+                                    <div className="">
+                                           <div className=""> 
+                                                <span className="text-blue-600  text-[25px]">{item.discount}</span> 
+                                                <span className=" bg-cyan-700 text-white px-2 rounded-lg ml-4">{item.percent}</span>
+                                            </div>
+                                            <span className="opacity-[0.5] text-[15px] block mb-1 line-through">{item.price}</span>
+                                            <input className="w-28 border-2 border-solid p-1" placeholder="son kiriting"  type="number" />
+                                            <div className="p-4 bg-slate-200 rounded-lg mt-5 mr- flex justify-between items-center w-32">
+                                                <button onClick={() => setCount(count - 1)} className="text-[20px] text-orange-500 font-bold">-</button><b>{count}</b> <button onClick={() => setCount(count + 1)} className="text-[20px] text-orange-500 font-bold">+</button>
+                                            </div>
+                                        </div>
+                                        <div className="mt-5">
+                                            <Link to={`/order/${item.id}/adress`}><button className="w-40 p-2 rounded-lg block mt-14 bg-cyan-700 text-white font-bold">Sotib olish</button> </Link>
+                                            <div className="mt-4"><input type="checkbox" /> Yetkazib berish xizmati bilan</div> 
+                                        </div>                         
+                                   </div>
                             <Modal
                                 isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal"
                                 style={{

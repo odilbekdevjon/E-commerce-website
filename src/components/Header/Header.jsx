@@ -15,14 +15,16 @@ import darkmode from "../../assets/night-light.svg";
 
 export default function Header() {
 
+    const localStorage = document.localStorage
+
     const { t } = useTranslation()
 
     const changeLang = (evt) => {
         i18n.changeLanguage(evt)
+        // localStorage.setItem("lang", i18n.changeLanguage(evt))
     }
 
     
-
     const menuRef = useRef();
 
     // const [modal, setModal] = useState(false)
@@ -46,14 +48,15 @@ export default function Header() {
 
     return (
         <>
-            <header className="header py-4  bg-slate-500 w-[100%] z-1">
+            <header className="header py-4  bg-slate-500 w-[100%] fixed z-1 top-0">
                 <div className="container">
                     <div className=" flex justify-between items-center">
                         <Link to={'/'}><img className="header__image rounded-lg block bg-transparent" src={logo} width={200} alt="logo" /></Link>
                         <ul  className="header__list flex">
-                            <li className="mr-10"><Link className=" text-white font-bold  group-hover:bg-white " href="#cars">{t("headerTitle1")}</Link></li>
-                            <li className="mr-10"><Link className="text-white font-bold"  to={"/dillers"}>{t("headerTitle2")}</Link></li>
-                            <li className=""><Link className="text-white font-bold" to={"/products"}>{t("headerTitle3")}</Link></li>
+                            <li className="mr-10 text-[18px] tracking-[1px]"><Link to={'/'} className=" text-white font-bold  group-hover:bg-white "><a href="#products">{t("headerTitle1")}</a></Link></li>
+                            <li className="mr-10 text-[18px] tracking-[1px]"><Link className="text-white font-bold"  to={"/about"}>{t("headerTitle2")}</Link></li>
+                            <li className="mr-10 text-[18px] tracking-[1px]"><Link className="text-white font-bold" to={"/products"}>{t("headerTitle3")}</Link></li>
+                            <li className="text-[18px] tracking-[1px]"><Link className="text-white font-bold" to={"/contact"}>{t("headerTitle4")}</Link></li>
                         </ul>
                         <menu ref={menuRef}  className="hidden">
                             <div className="mt-10 ml-10">

@@ -1,0 +1,11 @@
+.hero {
+
+}
+
+@media only screen and (max-width:768px) {
+    .hero {
+        &__wrapper {
+            text-align: center;   
+        }
+    }
+}

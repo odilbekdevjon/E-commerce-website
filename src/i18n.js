@@ -9,27 +9,30 @@ i18n
     resources: {
         en: {
             translation: {
-                headerTitle1:"Products",
-                headerTitle2:"Dillers",
+                headerTitle1:"Home",
+                headerTitle2:"About Us",
                 headerTitle3:"Available products",
+                headerTitle4:"Contact",
                 heroTitle1:"Colony construction products",
                 footerTitle1:"Contacts",
             },
         },
         ru: {
             translation: {
-                headerTitle1:"Продукты",
-                headerTitle2:"Диллардс",
+                headerTitle1:"Главная",
+                headerTitle2:"О нас",
                 headerTitle3:"Доступные продукты",
+                headerTitle4:"Контакт",
                 heroTitle1:"Строительная продукция колонии",
                 footerTitle1:"Контакты"
             },
         },
         uz: {
             translation: {
-                headerTitle1:"Maxsulotlar",
-                headerTitle2:"Dillerlar",
+                headerTitle1:"Bosh sahifa",
+                headerTitle2:"Biz haqimizda",
                 headerTitle3:"Mavjud maxsulotlar",
+                headerTitle4:"Aloqalar",
                 heroTitle1:"Koloniya qurilish maxsulotlari",
                 footerTitle1:"Kontaktlar"
             },
