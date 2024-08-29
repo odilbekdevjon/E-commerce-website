@@ -58,13 +58,14 @@ export default function Header() {
                             <li className="mr-10 text-[18px] tracking-[1px]"><Link className="text-white font-bold" to={"/products"}>{t("headerTitle3")}</Link></li>
                             <li className="text-[18px] tracking-[1px]"><Link className="text-white font-bold" to={"/contact"}>{t("headerTitle4")}</Link></li>
                         </ul>
-                        <menu ref={menuRef}  className="hidden">
-                            <div className="mt-10 ml-10">
-                            <li className="mr-10"><Link className=" text-black font-bold  group-hover:bg-white border-black border-2 border-solid p-2 mb-4" href="#cars">Qurilish maxsulotlari</Link></li>
-                            <li className="mr-10"><Link className="text-black font-bold border-black border-2 border-solid p-2 mb-4" href="/dilers">Maktab jixozlari</Link></li>
-                            <li className=""><Link className="text-black font-bold border-black border-2 border-solid p-2" href="/vehicles">Uy jixozlari</Link></li>
+                        <menu ref={menuRef}  className="hidden bg-slate-700 w-[100%] h-auto z-[10]">
+                            <div className="mt-10 ml-10 ">
+                            <li className="mr-10 text-[18px] tracking-[1px]"><Link to={'/'} className=" font-bold group-hover:bg-white mb-4"><a href="#products">{t("headerTitle1")}</a></Link></li>
+                            <li className="mr-10 text-[18px] tracking-[1px]"><Link className=" font-bold mb-4"  to={"/about"}>{t("headerTitle2")}</Link></li>
+                            <li className="mr-10 text-[18px] tracking-[1px]"><Link className="font-bold mb-4" to={"/products"}>{t("headerTitle3")}</Link></li>
+                            <li className="text-[18px] tracking-[1px]"><Link className=" font-bold" to={"/contact"}>{t("headerTitle4")}</Link></li>
                             </div>
-                            <button onClick={() => closeMenu()} className="p-2 border-2 border-solid border-black flex h-12 font-bold mr-2 mt-2">X</button>
+                            <button onClick={() => closeMenu()} className="p-2 border-2 border-solid border-white flex h-12 font-bold mr-2 mt-2">X</button>
                         </menu>
                         <div className=" flex items-center">
                             <button onClick={() => showMenu()}  className="header__burger mr-6">

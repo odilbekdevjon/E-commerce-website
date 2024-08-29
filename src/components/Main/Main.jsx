@@ -1,15 +1,21 @@
 import "./Main.scss";
-
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
+// data
 import ConstructionProducts from "../../database/data";
 
+
 export default function Main() {
+    
+    const { t } = useTranslation()
+
+
     return(
         <div className="container">
             <main className="main mt-10">
             <div className="main__wrapper">
-                <h1 id="products" className="font-bold text-[35px] text-center">Qurilish maxsulotlari</h1>
+                <h1 id="products" className="font-bold text-[35px] text-center">{t("productTitle1")}</h1>
                 <ul className="main__list flex justify-between flex-wrap mb-10">
                  {
                     ConstructionProducts?.map(item => {
@@ -29,7 +35,7 @@ export default function Main() {
                     </ul>
                 </div>
                 <div className="">
-                <h1 className="font-bold text-[35px] text-center">Maktab jixozlari</h1>
+                <h1 className="font-bold text-[35px] text-center">{t("productTitle2")}</h1>
                 <ul id="products" className="main__list flex justify-between flex-wrap mb-10">
                  {
                     ConstructionProducts?.map(item => {

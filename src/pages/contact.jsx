@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 // components
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -8,7 +10,11 @@ import deleveriy from "../assets/delivery.png";
 import contract from "../assets/contract.svg";
 
 
+
 export default function Contact() {
+
+    const { t } = useTranslation()
+
     return(
         <>
             <Header />
@@ -16,7 +22,7 @@ export default function Contact() {
                     <div className="container">
                         <div className="contact mt-40 flex">
                             <div className="contact__left  ml-36 mr-80">
-                                <h1 className="font-bold text-[45px] tracking-[1px]">Contact</h1>
+                                <h1 className="font-bold text-[45px] tracking-[1px]">{t("pageContact")}</h1>
                                 <span className="block mt-5 mb-10 text-[20px] text-orange-600 font-bold">Ask us about</span>
                                 <div className="flex items-center mb-5">
                                     <img className="mr-5" src={product} width={"45"} height={"40"} alt="product" />

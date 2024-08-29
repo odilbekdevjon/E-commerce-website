@@ -12,7 +12,7 @@ export default function Hero() {
     const { t } = useTranslation()
 
     return(
-        <section className="bg-img2 bg-cover bg-no-repeat bg-center w-[100%] h-[600px] pt-5">
+        <section className="hero__section bg-img1 bg-cover bg-no-repeat bg-center w-[100%] h-[600px] pt-5">
             <div className="container">
                 <div className="hero">
                         <div className="hero__wrapper">

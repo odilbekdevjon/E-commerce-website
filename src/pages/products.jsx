@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // components
 import Header from "../components/Header/Header";
@@ -8,14 +9,19 @@ import Footer from "../components/Footer/Footer";
 import ConstructionProducts from "../database/data";
 
 
+
+
 export default function Products() {
+
+    const { t } = useTranslation()
+
     return(
         <>
            <Header/>
                 <section className="mt-20">
                     <div className="container">
                         <div className="">
-                            <h1 id="products" className="font-bold text-[35px] text-center">Qurilish maxsulotlari</h1>
+                            <h1 id="products" className="font-bold text-[35px] text-center">{t("productTitle1")}</h1>
                             <ul className="main__list flex justify-between flex-wrap mb-10">
                             {
                                 ConstructionProducts?.map(item => {
@@ -34,7 +40,7 @@ export default function Products() {
                                 }
                             </ul>
                             <div className="">
-                <h1 className="font-bold text-[35px] text-center">Maktab jixozlari</h1>
+                <h1 className="font-bold text-[35px] text-center">{t("productTitle2")}</h1>
                 <ul id="products" className="main__list flex justify-between flex-wrap mb-10">
                  {
                     ConstructionProducts?.map(item => {
